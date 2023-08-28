@@ -43,7 +43,7 @@ function App() {
           <Grid item xs={12} md={6}>
             <Box sx={{ backgroundColor: 'transparent', width: '90%', marginBottom: 2 }}>
               <img 
-                src="/highlightbloom.png" 
+                src="/DH3bloom.png" 
                 alt="DAOhaus Logo" 
                 style={{ 
                   maxWidth: '100%',
