@@ -1,4 +1,19 @@
-# React + TypeScript + Vite
+# DAOhaus Links
+
+Provided upon these pages is found, for your internet browsing, business and pleasure activities, links to the many place DAOhaus can be found on the webs.
+
+Contributions are welcome by making a PR. If you prefer, you may also drop issues in the box.
+
+## [DAOhaus Links](https://links.daohaus.club)
+
+more to come
+
+
+## Original Readme 
+
+(kept should anyone need it in a fork)
+
+### React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +22,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+#### Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
