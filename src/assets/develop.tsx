@@ -18,7 +18,7 @@ const Develop = [
       icon: < GiBullHorns  />,
     },
     {
-      title: 'DAOhaus Developer Docs',
+      title: 'Developer Docs',
       url: 'https://docs.daohaus.club/developer',
       icon: < GiArchiveResearch />,
     },

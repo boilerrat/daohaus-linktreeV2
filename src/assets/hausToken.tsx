@@ -18,7 +18,7 @@ const HausToken = [
         icon: < GiCrownCoin />,
     },
     {
-        title: "Liquidity Pool on Optimisim",
+        title: "LP on Optimisim",
         url: "https://velodrome.finance/liquidity?filter=lowTvl&query=haus",
         icon: < FaBicycle />
     },

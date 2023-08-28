@@ -31,7 +31,7 @@ const Contracts = [
       icon: < GiAbstract089 />,
     },
     {
-      title: "Optimistic Ethereum",
+      title: "Optimism",
       url: "https://optimistic.etherscan.io/address/0x3E0eAdE343Ddc556a6Cf0f858e4f685ba303ce71",
       icon: < GiAbstract116 />,
     },

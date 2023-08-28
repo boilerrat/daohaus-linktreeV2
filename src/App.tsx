@@ -44,7 +44,7 @@ function App() {
             <Box sx={{ backgroundColor: 'transparent', width: '90%', marginBottom: 2 }}>
               <img 
                 src="/highlightbloom.png" 
-                alt="D3DLogo" 
+                alt="DAOhaus Logo" 
                 style={{ 
                   maxWidth: '100%',
                   objectFit: 'contain',
@@ -64,7 +64,7 @@ function App() {
               elevation: 24
             }}
             >
-              <Typography variant="subtitle1" align="center" sx={{ color: '#fbd745' }}>
+              <Typography variant="h5" align="center" sx={{ color: '#fbd745' }}>
                 The protocol for purpose-driven governance
               </Typography>
             </Paper>
@@ -77,18 +77,18 @@ function App() {
             { title: 'Development', links: Development },
             { title: 'Media', links: Media },
             { title: '$HAUS Token', links: HausToken},
-            { title: 'Factory Contract Deployments', links: Contracts},
+            { title: 'Contract Deploys', links: Contracts},
             { title: 'DAOhaus V2', links: DAOhausV2},
             { title: 'Ecosystem', links: Ecosystem },
             // Add other categories here...
             ].map((category, index) => (
             <Grid item xs={12} key={index}> // category stylins
-              <Typography variant="h1" align="center"
+              <Typography variant="h3" align="center"
                sx={{ 
-                  color: 'white',
+                  color: '#d96b55',
                   marginBottom: 2,
                   '&:hover': {
-                    color: '#d96b55' 
+                    color: '#559be2' 
                  }}
                 }>
                 {category.title}
@@ -100,7 +100,7 @@ function App() {
                     variant="contained"
                     href={link.url}
                       sx={{
-                        width: '75%',
+                        width: '70%',
                         height: '60px',
                         fontSize: '24px', // Increase the font size
                         backgroundColor: 'transparent',
@@ -119,11 +119,11 @@ function App() {
                         }}
                       >
                         {/* Left-justify the icon */}
-                  <span style={{ fontSize: '34px', position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)' }}>
+                  <span style={{ fontSize: '24px', position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)' }}>
                     {link.icon}
                   </span>
                         {/* Center the text */}
-                  <span style={{ fontSize: '24px', width: '100%', textAlign: 'center', display: 'block' }}>
+                  <span style={{ fontSize: '18px', width: '100%', textAlign: 'center', display: 'block' }}>
                     {link.title}
                   </span>
                 </Button>
