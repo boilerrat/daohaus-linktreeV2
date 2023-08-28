@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';  // Make sure the path is correct
+import * as React from 'react';  // Updated import
+import * as ReactDOM from 'react-dom';  // Updated import
+import App from './App';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';  // Import your custom theme from theme.tsx
+import theme from './theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
