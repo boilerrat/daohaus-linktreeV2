@@ -112,7 +112,7 @@ function App() {
                           '&:hover': {
                           backgroundColor: 'black',
                           borderColor: '#fbd745',
-                          border: '2px solid',
+                          border: '1px solid',
                           color: '#fbd745',
                           boxShadow: '5px 5px 5px grey',
                           },
