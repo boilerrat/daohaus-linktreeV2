@@ -7,22 +7,22 @@ import { GiSpellBook,
 
 const PublicHaus = [
     {
-    title: "Public HAUS Docs",
+    title: "Docs",
     url: "https://publichaus.club/docs/welcome/",
     icon: < GiSpellBook />,
   },
   {
-    title: "Public HAUS Governance",
+    title: "Governance",
     url: "https://admin.daohaus.fun/#/molochv3/0x1/0xf844b98df9ccdfbe5d460d0d7bdca232cf9da923",
     icon: < GiCapitol  />,
   },
   {
-    title: "Public HAUS Onboarder",
+    title: "Onboarder",
     url: "https://join.daohaus.fun/",
     icon: < GiArchiveRegister />,
   },
   {
-    title: "Public HAUS Website",
+    title: "Website",
     url: "https://publichaus.club/",
     icon: < GiWorld />,
   },
