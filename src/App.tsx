@@ -100,8 +100,8 @@ function App() {
                  variant="contained"
                  href={link.url}
                  sx={{
-                   width: '75%',
-                   height: '60px',
+                   width: '85%',
+                   height: '65px',
                    fontSize: {
                     xs: '16px',
                     sm: '18px',
