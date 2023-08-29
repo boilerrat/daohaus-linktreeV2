@@ -1,3 +1,5 @@
+import React from 'react';
+
 // ------------------------------------------------ 
 // ------------- UI and Stylin's ------------------ 
 // ------------------------------------------------ 
@@ -20,6 +22,7 @@ import HausToken from './assets/hausToken';
 import Contracts from './assets/contracts';
 import DAOhausV2 from './assets/DAOhausv2';
 import Ecosystem from './assets/ecosystem';
+
 
 // ------------------------------------------------ 
 // ------------------- Main App-------------------- 
@@ -94,57 +97,66 @@ function App() {
                 {category.title}
               </Typography>
               {category.links.map((link, linkIndex) => (
-               <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
-               <Button
-                 key={linkIndex}
-                 variant="contained"
-                 href={link.url}
-                 sx={{
-                   width: '85%',
-                   height: '65px',
-                   fontSize: {
-                    xs: '16px',
-                    sm: '18px',
-                    md: '20px',
-                   },
-                   backgroundColor: 'transparent',
-                   color: 'white',
-                   boxShadow: '5px 5px 5px grey',
-                   borderRadius: 0,
-                   border: '1px solid white',
-                   '&:hover': {
-                     backgroundColor: 'black',
-                     borderColor: '#fbd745',
-                     border: '1px solid',
-                     color: '#fbd745',
-                     boxShadow: '5px 5px 5px grey',
-                   },
-                 }}
-               >
-                 {/* Center the icon and text */}
-                 <Box 
-                   sx={{ 
-                     display: 'flex', 
-                     alignItems: 'center', 
-                     justifyContent: 'center', 
-                     width: '100%', // Take full width of the button
-                   }}
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
+                  <Button
+                  key={linkIndex}
+                  variant="contained"
+                  href={link.url}
+                  sx={{
+                    width: '70%',
+                    height: '60px',
+                    backgroundColor: 'transparent',
+                    color: 'white',
+                    boxShadow: '5px 5px 5px grey',
+                    borderRadius: 0,
+                    border: '1px solid white',
+                    '&:hover': {
+                      backgroundColor: 'black',
+                      borderColor: '#fbd745',
+                      border: '1px solid',
+                      color: '#fbd745',
+                      boxShadow: '5px 5px 5px grey',
+                    },
+                  }}
+                >
+                {/* Left-justify the icon */}
+                  <Box 
+                  sx={{ 
+                    fontSize: {
+                      xs: '20px',
+                      sm: '25px',
+                      md: '30px',
+                    },
+                    position: 'absolute',
+                    left: '15px',
+                    top: '50%',
+                    transform: 'translateY(-50%)'
+                    }}
+                >
+                  {link.icon}
+                  </Box>
+                      {/* Center the text */}
+                  <Box 
+                    sx={{ 
+                      fontSize: {
+                      xs: '16px',
+                      sm: '18px',
+                      md: '24px',
+                    },
+                      width: '100%',
+                      textAlign: 'center',
+                      display: 'block'
+                    }}
                  >
-                   <Box sx={{ fontSize: '24px', marginRight: '8px' }}>
-                     {link.icon}
-                   </Box>
-                   <Box sx={{ fontSize: '24px' }}>
-                     {link.title}
-                   </Box>
-                 </Box>
-               </Button>
-             </Box>
-                                   
-              ))}
-            </Grid>
-          ))}
-        </Grid>
-        <Grid container justifyContent="center" alignItems="center" sx={{ marginBottom: 4 }}>
+                  {link.title}
+                </Box>
+              </Button>
+            </Box>                 
+           ))}
+         </Grid>
+        ))}
+      </Grid>
+      <Grid container justifyContent="center" alignItems="center" sx={{ marginBottom: 4 }}>
           <Grid item xs={12}>
             <Box sx={{ backgroundColor: 'transparent', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
               <img 
