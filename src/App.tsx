@@ -96,37 +96,33 @@ function App() {
               {category.links.map((link, linkIndex) => (
                 <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
                <Button
-                    key={linkIndex}
-                    variant="contained"
-                    href={link.url}
-                      sx={{
-                        width: '70%',
-                        height: '60px',
-                        fontSize: '24px', // Increase the font size
-                        backgroundColor: 'transparent',
-                        color: 'white',
-                        boxShadow: '5px 5px 5px grey',
-                        borderRadius: 0,
-                        border: '1px solid white',
-                        position: 'relative', // Set to relative to allow absolute positioning inside
-                          '&:hover': {
-                          backgroundColor: 'black',
-                          borderColor: '#fbd745',
-                          border: '1px solid',
-                          color: '#fbd745',
-                          boxShadow: '5px 5px 5px grey',
-                          },
-                        }}
-                      >
-                        {/* Left-justify the icon */}
-                  <span style={{ fontSize: '24px', position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)' }}>
-                    {link.icon}
-                  </span>
-                        {/* Center the text */}
-                  <span style={{ fontSize: '18px', width: '100%', textAlign: 'center', display: 'block' }}>
-                    {link.title}
-                  </span>
-                </Button>
+                  key={linkIndex}
+                  variant="contained"
+                  href={link.url}
+                  sx={{
+                    width: '65%',
+                    height: '60px',
+                    fontSize: {
+                    xs: '16px',
+                    sm: '18px',
+                    md: '24px',
+                  },
+                  backgroundColor: 'transparent',
+                  color: 'white',
+                  boxShadow: '5px 5px 5px grey',
+                  borderRadius: 0,
+                  border: '1px solid white',
+                  '&:hover': {
+                    backgroundColor: 'black',
+                    borderColor: '#fbd745',
+                    border: '1px solid',
+                    color: '#fbd745',
+                    boxShadow: '5px 5px 5px grey',
+                  },
+                }}
+              > 
+                {link.title}
+              </Button>
               </Box>                      
               ))}
             </Grid>
