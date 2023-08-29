@@ -94,40 +94,52 @@ function App() {
                 {category.title}
               </Typography>
               {category.links.map((link, linkIndex) => (
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
+               <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
                <Button
-                    key={linkIndex}
-                    variant="contained"
-                    href={link.url}
-                      sx={{
-                        width: '70%',
-                        height: '60px',
-                        fontSize: '24px', // Increase the font size
-                        backgroundColor: 'transparent',
-                        color: 'white',
-                        boxShadow: '5px 5px 5px grey',
-                        borderRadius: 0,
-                        border: '1px solid white',
-                        position: 'relative', // Set to relative to allow absolute positioning inside
-                          '&:hover': {
-                          backgroundColor: 'black',
-                          borderColor: '#fbd745',
-                          border: '1px solid',
-                          color: '#fbd745',
-                          boxShadow: '5px 5px 5px grey',
-                          },
-                        }}
-                      >
-                        {/* Left-justify the icon */}
-                  <span style={{ fontSize: '24px', position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)' }}>
-                    {link.icon}
-                  </span>
-                        {/* Center the text */}
-                  <span style={{ fontSize: '18px', width: '100%', textAlign: 'center', display: 'block' }}>
-                    {link.title}
-                  </span>
-                </Button>
-              </Box>                      
+                 key={linkIndex}
+                 variant="contained"
+                 href={link.url}
+                 sx={{
+                   width: '75%',
+                   height: '60px',
+                   fontSize: {
+                    xs: '16px',
+                    sm: '18px',
+                    md: '20px',
+                   },
+                   backgroundColor: 'transparent',
+                   color: 'white',
+                   boxShadow: '5px 5px 5px grey',
+                   borderRadius: 0,
+                   border: '1px solid white',
+                   '&:hover': {
+                     backgroundColor: 'black',
+                     borderColor: '#fbd745',
+                     border: '1px solid',
+                     color: '#fbd745',
+                     boxShadow: '5px 5px 5px grey',
+                   },
+                 }}
+               >
+                 {/* Center the icon and text */}
+                 <Box 
+                   sx={{ 
+                     display: 'flex', 
+                     alignItems: 'center', 
+                     justifyContent: 'center', 
+                     width: '100%', // Take full width of the button
+                   }}
+                 >
+                   <Box sx={{ fontSize: '24px', marginRight: '8px' }}>
+                     {link.icon}
+                   </Box>
+                   <Box sx={{ fontSize: '24px' }}>
+                     {link.title}
+                   </Box>
+                 </Box>
+               </Button>
+             </Box>
+                                   
               ))}
             </Grid>
           ))}
