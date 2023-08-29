@@ -94,36 +94,52 @@ function App() {
                 {category.title}
               </Typography>
               {category.links.map((link, linkIndex) => (
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
+               <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
                <Button
-                  key={linkIndex}
-                  variant="contained"
-                  href={link.url}
-                  sx={{
-                    width: '65%',
-                    height: '60px',
-                    fontSize: {
+                 key={linkIndex}
+                 variant="contained"
+                 href={link.url}
+                 sx={{
+                   width: '75%',
+                   height: '60px',
+                   fontSize: {
                     xs: '16px',
                     sm: '18px',
-                    md: '24px',
-                  },
-                  backgroundColor: 'transparent',
-                  color: 'white',
-                  boxShadow: '5px 5px 5px grey',
-                  borderRadius: 0,
-                  border: '1px solid white',
-                  '&:hover': {
-                    backgroundColor: 'black',
-                    borderColor: '#fbd745',
-                    border: '1px solid',
-                    color: '#fbd745',
-                    boxShadow: '5px 5px 5px grey',
-                  },
-                }}
-              > 
-                {link.title}
-              </Button>
-              </Box>                      
+                    md: '20px',
+                   },
+                   backgroundColor: 'transparent',
+                   color: 'white',
+                   boxShadow: '5px 5px 5px grey',
+                   borderRadius: 0,
+                   border: '1px solid white',
+                   '&:hover': {
+                     backgroundColor: 'black',
+                     borderColor: '#fbd745',
+                     border: '1px solid',
+                     color: '#fbd745',
+                     boxShadow: '5px 5px 5px grey',
+                   },
+                 }}
+               >
+                 {/* Center the icon and text */}
+                 <Box 
+                   sx={{ 
+                     display: 'flex', 
+                     alignItems: 'center', 
+                     justifyContent: 'center', 
+                     width: '100%', // Take full width of the button
+                   }}
+                 >
+                   <Box sx={{ fontSize: '24px', marginRight: '8px' }}>
+                     {link.icon}
+                   </Box>
+                   <Box sx={{ fontSize: '24px' }}>
+                     {link.title}
+                   </Box>
+                 </Box>
+               </Button>
+             </Box>
+                                   
               ))}
             </Grid>
           ))}
