@@ -2,16 +2,13 @@
 // ------------------------------------------------ 
 // ------------- UI and Stylin's ------------------ 
 // ------------------------------------------------ 
-
-import { Box, CssBaseline, Button, Grid, Typography, Paper } from '@mui/material';
+import { Box, CssBaseline, Button, IconButton, Grid, Typography, Paper, Link } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
-
 // ----------------------------------------------- 
 // -------------- Import ------------------------- 
 // ------------ Link Category Files--------------- 
 // ----------------------------------------------- 
-
 // Importing the link category files
 import DAOhausV3 from './assets/DAOhausv3';
 import PublicHaus from './assets/publicHaus';
@@ -21,12 +18,13 @@ import HausToken from './assets/hausToken';
 import Contracts from './assets/contracts';
 import DAOhausV2 from './assets/DAOhausv2';
 import Ecosystem from './assets/ecosystem';
-
-
+// ------------------------------------------------
+// -------------- Footer Icons --------------------
+// ------------------------------------------------
+import { FaDiscord, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa6';
 // ------------------------------------------------ 
 // ------------------- Main App-------------------- 
 // ------------------------------------------------ 
-
 function App() {
   return (
     <>
@@ -40,19 +38,22 @@ function App() {
           justifyContent: 'flex-end',
         }}
       >
-       <Grid container justifyContent="center" alignItems="center" sx={{ marginBottom: 4 }}>
-          {/* First Box with Image */}
-          <Grid item xs={12} md={6}>
-            <Box sx={{ backgroundColor: 'transparent', width: '90%', marginBottom: 2 }}>
-              <img 
-                src="/DH3bloom.png" 
-                alt="DAOhaus Logo" 
-                style={{ 
-                  maxWidth: '100%',
-                  objectFit: 'contain',
-                }} 
-              />
-            </Box>
+            <Grid container justifyContent="center" alignItems="center" sx={{ marginBottom: 4 }}>
+                {/* First Box with Image */}
+            <Grid item xs={12} md={6}>
+              <Box sx={{ backgroundColor: 'transparent', width: '90%', marginBottom: 2 }}>
+                <img 
+                  src="/DH3bloom.png" 
+                  alt="DAOhaus Logo" 
+                  style={{ 
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                    marginTop: '20px'  // Added margin-top
+                  }} 
+                />
+              </Box>
+            </Grid>
+
             </Grid>
             <Grid item xs={12}>
               <Paper
@@ -81,8 +82,7 @@ function App() {
               The protocol for purpose-driven governance
             </Typography>
           </Paper>
-        </Grid>
-        </Grid>
+        </Grid>  
         <Grid container justifyContent="center" alignItems="center">
             {[
               { title: 'DAOhaus V3', links: DAOhausV3 },
@@ -188,11 +188,43 @@ function App() {
           </Grid>
         </Grid>
       </Box>
-    </>
+      <Box sx={{ backgroundColor: 'black', color: 'white' }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="center">
+      <Grid item xs={12} sm={4}>
+        <Typography align="center" variant="body1">
+          <Link href="https://www.boilerrat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#559be2', textDecoration: 'none' }}>
+            Made by boiler - 2023
+          </Link>
+        </Typography>
+      </Grid>
+    {/* Middle Section: Social Media Icons */}
+     <Grid item xs={12} sm={4}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <IconButton href="https://discord.gg/daohaus" target="_blank" rel="noopener noreferrer" sx={{ color: '#fbd745' }}>
+                <FaDiscord />
+              </IconButton>
+              <IconButton href="https://twitter.com/DAOhaus" target="_blank" rel="noopener noreferrer" sx={{ color: '#fbd745' }}>
+                <FaTwitter />
+              </IconButton>
+              <IconButton href="https://github.com/HausDAO" target="_blank" rel="noopener noreferrer" sx={{ color: '#fbd745' }}>
+                <FaGithub />
+              </IconButton>
+              <IconButton href="https://daohaus.club/" target="_blank" rel="noopener noreferrer" sx={{ color: '#fbd745' }}>
+                <FaGlobe />
+              </IconButton>
+            </Box>
+          </Grid>
+      {/* Right Section: DH Logo */}
+      <Grid item xs={12} sm={4}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '2px', marginBottom: '5px' }}>
+           <img src="/dhlogobloom.png" alt="Logo" style={{ maxWidth: '25%' }} />
+       </Box>
+        </Grid>
+      </Grid>
+     </Box> 
+   </>  
   );
 }
-
-// WrappedApp function that wraps App with ThemeProvider
 function WrappedApp() {
   return (
     <ThemeProvider theme={theme}>
@@ -200,6 +232,5 @@ function WrappedApp() {
     </ThemeProvider>
   );
 }
-
 // Exporting WrappedApp as default
 export default WrappedApp;
