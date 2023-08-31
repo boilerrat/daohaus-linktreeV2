@@ -48,12 +48,11 @@ function App() {
                   style={{ 
                     maxWidth: '100%',
                     objectFit: 'contain',
-                    marginTop: '20px'  // Added margin-top
+                    marginTop: '0px'  // Added margin-top
                   }} 
                 />
               </Box>
             </Grid>
-
             </Grid>
             <Grid item xs={12}>
               <Paper
