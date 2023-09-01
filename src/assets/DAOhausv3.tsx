@@ -1,3 +1,4 @@
+import * as React from 'react';
 // assets/DAOhausV3.ts
 import { GiWizardStaff,
          GiWhiteBook,

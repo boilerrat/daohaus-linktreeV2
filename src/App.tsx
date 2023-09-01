@@ -1,8 +1,21 @@
+import * as React from 'react';
 
 // ------------------------------------------------ 
 // ------------- UI and Stylin's ------------------ 
 // ------------------------------------------------ 
-import { Box, CssBaseline, Button, IconButton, Grid, Typography, Paper, Link } from '@mui/material';
+import { Box,
+         Card,
+         CardContent,
+         CardMedia,
+         CardActions,
+         CssBaseline,
+         Button,
+         IconButton,
+         Grid,
+         Typography,
+         Paper,
+         Link
+         } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 // ----------------------------------------------- 
@@ -22,6 +35,7 @@ import Ecosystem from './assets/ecosystem';
 // -------------- Footer Icons --------------------
 // ------------------------------------------------
 import { FaDiscord, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa6';
+import { relative } from 'path';
 // ------------------------------------------------ 
 // ------------------- Main App-------------------- 
 // ------------------------------------------------ 
@@ -83,45 +97,49 @@ function App() {
           </Paper>
         </Grid>  
         <Grid container justifyContent="center" alignItems="center">
-            {[
-              { title: 'DAOhaus V3', links: DAOhausV3 },
-              { title: 'Public HAUS', links: PublicHaus },
-              { title: 'Development', links: Development },
-              { title: 'Media', links: Media },
-              { title: '$HAUS Token', links: HausToken },
-              { title: 'Contract Deploys', links: Contracts },
-              { title: 'DAOhaus V2', links: DAOhausV2 },
-              { title: 'Ecosystem', links: Ecosystem },
-            ].map((category, index) => (
-        <Grid item xs={12} key={index}>
-          <Typography 
-            variant="h3" 
-            align="center"
-            sx={{ 
-              fontSize: {
-                xs: '1.75rem',  // Smaller font size for extra small screens
-                sm: '2.0rem', // Slightly larger for small screens
-                md: '2.5rem',    // Default H3 size for medium screens and up
-              },
-              color: '#d96b55',
-              marginBottom: 2,
-              '&:hover': {
-                color: '#559be2' 
-          }
-        }}
-      >
-        {category.title}
-      </Typography>
-              {category.links.map((link, linkIndex) => (
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
-                  <Button
+        {[
+          { title: 'DAOhaus V3', links: DAOhausV3 },
+          { title: 'Public HAUS', links: PublicHaus },
+          { title: 'Development', links: Development },
+          { title: 'Media', links: Media },
+          { title: '$HAUS Token', links: HausToken },
+          { title: 'Contract Deploys', links: Contracts },
+          { title: 'DAOhaus V2', links: DAOhausV2 },
+          { title: 'Ecosystem', links: Ecosystem },
+        ].map((category, index) => (
+          <Grid item xs={12} key={index}>
+            {/* Heading for each category */}
+            <Typography 
+              variant="h3" 
+              align="center"
+              sx={{ 
+                fontSize: {
+                  xs: '1.75rem',
+                  sm: '2.0rem',
+                  md: '2.5rem',
+                },
+                color: '#d96b55',
+                marginBottom: 2,
+                '&:hover': {
+                  color: '#559be2' 
+                }
+              }}
+            >
+              {category.title}
+            </Typography>
+            
+            {/* Conditional to skip button rendering for 'Ecosystem' */}
+            {category.title !== 'Ecosystem' && category.links.map((link, linkIndex) => (
+              <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
+                {/* Button for each link */}
+                <Button
                   key={linkIndex}
                   variant="contained"
                   href={link.url}
                   sx={{
                     width: '70%',
                     height: '60px',
-                    backgroundColor: 'transparent',
+                    backgroundColor: '#1e1e1e',
                     color: 'white',
                     boxShadow: '5px 5px 5px grey',
                     borderRadius: 0,
@@ -135,43 +153,79 @@ function App() {
                     },
                   }}
                 >
-                {/* Left-justify the icon */}
-                  <Box 
-                  sx={{ 
-                    fontSize: {
-                      xs: '20px',
-                      sm: '25px',
-                      md: '30px',
-                    },
-                    position: 'absolute',
-                    left: '15px',
-                    top: '50%',
-                    transform: 'translateY(-50%)'
-                    }}
-                >
-                  {link.icon}
-                  </Box>
-                      {/* Center the text */}
+                  {/* Icon styling */}
                   <Box 
                     sx={{ 
                       fontSize: {
-                      xs: '16px',
-                      sm: '18px',
-                      md: '24px',
-                    },
+                        xs: '20px',
+                        sm: '25px',
+                        md: '30px',
+                      },
+                      position: 'absolute',
+                      left: '15px',
+                      top: '50%',
+                      transform: 'translateY(-50%)'
+                    }}
+                  >
+                    {link.icon}
+                  </Box>
+                  
+                  {/* Text styling */}
+                  <Box 
+                    sx={{ 
+                      fontSize: {
+                        xs: '16px',
+                        sm: '18px',
+                        md: '24px',
+                      },
                       width: '100%',
                       textAlign: 'center',
                       display: 'block'
                     }}
-                 >
-                  {link.title}
-                </Box>
-              </Button>
-            </Box>                 
-           ))}
-         </Grid>
+                  >
+                    {link.title}
+                  </Box>
+                </Button>
+              </Box>                 
+            ))}
+          </Grid>
         ))}
       </Grid>
+      {/* Ecosystem Card Section */}
+      <Grid container spacing={3} justifyContent="center" alignItems="stretch" sx={{ width: '70%', margin: 'auto' }}>
+        {Ecosystem.map((card, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={2} key={index}>
+            {/* Card Component */}
+            <Card variant='outlined' 
+              sx={{ 
+                height: { xs: '300px', sm: '350px', md: '400px' },  // Fixed height for different screen sizes
+                display: 'flex',  
+                flexDirection: 'column',  
+                justifyContent: 'space-between',
+                bgcolor: '#1e1e1e',
+                color: 'white'  
+              }}>
+              {/* Media/Thumbnail */}
+              <CardMedia
+                component="img"
+                sx={{mx: 'auto', width: 3/4, marginTop: '10px' }}
+                image={card.image}
+                alt={card.title}
+              />
+              {/* Content */}
+              <CardContent>
+                <Typography variant="body2" component="div">
+                  {card.description}
+                </Typography>
+              </CardContent>
+              {/* Actions */}
+              <CardActions sx={{ justifyContent: 'flex-start' }}>
+                <Button size="small" href={card.url}>Learn More</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid> 
       <Grid container justifyContent="center" alignItems="center" sx={{ marginBottom: 4 }}>
           <Grid item xs={12}>
             <Box sx={{ backgroundColor: 'transparent', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
