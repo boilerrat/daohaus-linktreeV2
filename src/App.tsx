@@ -33,6 +33,7 @@ import Ecosystem from './assets/ecosystem';
 // -------------- Footer Icons --------------------
 // ------------------------------------------------
 import { FaDiscord, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa6';
+
 // ------------------------------------------------ 
 // ------------------- Main App-------------------- 
 // ------------------------------------------------ 
@@ -125,66 +126,69 @@ function App() {
               {category.title}
             </Typography>
             
-            {/* Conditional to skip button rendering for 'Ecosystem' */}
-            {category.title !== 'Ecosystem' && category.links.map((link, linkIndex) => (
-              <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }}>
-                {/* Button for each link */}
-                <Button
-                  key={linkIndex}
-                  variant="contained"
-                  href={link.url}
-                  sx={{
-                    width: '70%',
-                    height: '60px',
-                    backgroundColor: '#1e1e1e',
-                    color: 'white',
+            {category.title !== 'Ecosystem' && category.links.map((link, linkIndex) => {
+          // Type assertion to specify that link has an icon property
+          const linkWithIcon = link as { title: string; url: string; icon: JSX.Element };
+          
+          return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 3 }} key={linkIndex}>
+              {/* Button for each link */}
+              <Button
+                variant="contained"
+                href={linkWithIcon.url}  // Use linkWithIcon instead of link
+                sx={{
+                  width: '70%',
+                  height: '60px',
+                  backgroundColor: '#1e1e1e',
+                  color: 'white',
+                  boxShadow: '5px 5px 5px grey',
+                  borderRadius: 0,
+                  border: '1px solid white',
+                  '&:hover': {
+                    backgroundColor: 'black',
+                    borderColor: '#fbd745',
+                    border: '1px solid',
+                    color: '#fbd745',
                     boxShadow: '5px 5px 5px grey',
-                    borderRadius: 0,
-                    border: '1px solid white',
-                    '&:hover': {
-                      backgroundColor: 'black',
-                      borderColor: '#fbd745',
-                      border: '1px solid',
-                      color: '#fbd745',
-                      boxShadow: '5px 5px 5px grey',
+                  },
+                }}
+              >
+                {/* Icon styling */}
+                <Box 
+                  sx={{ 
+                    fontSize: {
+                      xs: '20px',
+                      sm: '25px',
+                      md: '30px',
                     },
+                    position: 'absolute',
+                    left: '15px',
+                    top: '50%',
+                    transform: 'translateY(-50%)'
                   }}
                 >
-                  {/* Icon styling */}
-                  <Box 
-                    sx={{ 
-                      fontSize: {
-                        xs: '20px',
-                        sm: '25px',
-                        md: '30px',
-                      },
-                      position: 'absolute',
-                      left: '15px',
-                      top: '50%',
-                      transform: 'translateY(-50%)'
-                    }}
-                  >
-                    {link.icon}
-                  </Box>
-                  
-                  {/* Text styling */}
-                  <Box 
-                    sx={{ 
-                      fontSize: {
-                        xs: '16px',
-                        sm: '18px',
-                        md: '24px',
-                      },
-                      width: '100%',
-                      textAlign: 'center',
-                      display: 'block'
-                    }}
-                  >
-                    {link.title}
-                  </Box>
-                </Button>
-              </Box>                 
-            ))}
+                  {linkWithIcon.icon}  {/* Use linkWithIcon instead of link */}
+                </Box>
+                
+                {/* Text styling */}
+                <Box 
+                  sx={{ 
+                    fontSize: {
+                      xs: '16px',
+                      sm: '18px',
+                      md: '24px',
+                    },
+                    width: '100%',
+                    textAlign: 'center',
+                    display: 'block'
+                  }}
+                >
+                  {linkWithIcon.title}  {/* Use linkWithIcon instead of link */}
+                </Box>
+              </Button>
+            </Box>
+          );
+        })}      
           </Grid>
         ))}
       </Grid>
