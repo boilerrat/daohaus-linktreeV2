@@ -1,7 +1,9 @@
 // ------------------------------------------------ 
 // ------------- UI and Stylin's ------------------ 
 // ------------------------------------------------ 
-import { Box,
+import { 
+         Avatar,
+         Box,
          Card,
          CardContent,
          CardMedia,
@@ -245,11 +247,14 @@ function App() {
       <Box sx={{ backgroundColor: 'black', color: 'white' }}>
       <Grid container spacing={2} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={4}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Avatar alt="Boiler Avatar" src="/pn237.png" sx={{ width: 30, height: 35, marginRight: 2 }} />
         <Typography align="center" variant="body1">
           <Link href="https://www.boilerrat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#559be2', textDecoration: 'none' }}>
             Made by boiler - 2023
           </Link>
         </Typography>
+        </Box>
       </Grid>
     {/* Middle Section: Social Media Icons */}
      <Grid item xs={12} sm={4}>
