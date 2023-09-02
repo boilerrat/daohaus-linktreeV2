@@ -34,7 +34,7 @@ import Ecosystem from './assets/ecosystem';
 // ------------------------------------------------
 // -------------- Footer Icons --------------------
 // ------------------------------------------------
-import { FaDiscord, FaTwitter, FaGithub, FaGlobe } from 'react-icons/fa6';
+import { FaDiscord, FaTwitter, FaGithub, FaGlobe, FaCodeFork } from 'react-icons/fa6';
 
 // ------------------------------------------------ 
 // ------------------- Main App-------------------- 
@@ -246,16 +246,29 @@ function App() {
       </Box>
       <Box sx={{ backgroundColor: 'black', color: 'white' }}>
       <Grid container spacing={2} justifyContent="center" alignItems="center">
-      <Grid item xs={12} sm={4}>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Avatar alt="Boiler Avatar" src="/pn237.png" sx={{ width: 30, height: 35, marginRight: 2 }} />
-        <Typography align="center" variant="body1">
-          <Link href="https://www.boilerrat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#559be2', textDecoration: 'none' }}>
-            Made by boiler - 2023
-          </Link>
-        </Typography>
-        </Box>
-      </Grid>
+        {/* Left Section: Made by boiler */}
+        <Grid item xs={12} sm={4}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {/* Avatar and Made by boiler */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Avatar alt="Boiler Avatar" src="/pn237.png" sx={{ width: 56, height: 56, marginRight: 2 }} />
+              <Typography align="center" variant="body1">
+                <Link href="https://www.boilerrat.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#559be2', textDecoration: 'none' }}>
+                  Made by boiler - 2023
+                </Link>
+              </Typography>
+            </Box>
+            {/* Fork This Page */}
+            <Box sx={{ display: 'flex', alignItems: 'center', color: '#559be2', marginTop: 1 }}>
+              <FaCodeFork size={20} />
+              <Typography variant="body2">
+                <Link href="https://github.com/boilerrat/daohaus-linktreeV2" target="_blank" rel="noopener noreferrer" style={{ color: '#559be2', textDecoration: 'none' }}>
+                  - Fork This Page
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
     {/* Middle Section: Social Media Icons */}
      <Grid item xs={12} sm={4}>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
