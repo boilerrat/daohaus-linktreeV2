@@ -60,7 +60,7 @@ function App() {
                   style={{ 
                     maxWidth: '100%',
                     objectFit: 'contain',
-                    marginTop: '0px'  // Added margin-top
+                    marginTop: '25px'  // Added margin-top
                   }} 
                 />
               </Box>
